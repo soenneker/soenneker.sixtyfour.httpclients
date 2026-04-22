@@ -1,20 +1,19 @@
 using Soenneker.Sixtyfour.HttpClients.Abstract;
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Sixtyfour.HttpClients.Tests;
 
-[Collection("Collection")]
-public sealed class SixtyfourOpenApiHttpClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class SixtyfourOpenApiHttpClientTests : HostedUnitTest
 {
     private readonly ISixtyfourOpenApiHttpClient _httpclient;
 
-    public SixtyfourOpenApiHttpClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public SixtyfourOpenApiHttpClientTests(Host host) : base(host)
     {
         _httpclient = Resolve<ISixtyfourOpenApiHttpClient>(true);
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
