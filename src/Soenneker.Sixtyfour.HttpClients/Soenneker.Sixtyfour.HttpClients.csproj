@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>A thread-safe singleton HttpClient for Sixtyfour's OpenAPI integration.</Description>
+        <Description>Provides a reusable authenticated HTTP client for the Sixtyfour enrichment API.</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Sixtyfour.HttpClients</AssemblyName>

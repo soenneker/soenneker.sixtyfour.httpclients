@@ -6,12 +6,12 @@ using Soenneker.Utils.HttpClientCache.Registrar;
 namespace Soenneker.Sixtyfour.HttpClients.Registrars;
 
 /// <summary>
-/// Registers the OpenAPI HttpClient wrapper for dependency injection.
+/// Registers the authenticated Sixtyfour HTTP client provider.
 /// </summary>
 public static class SixtyfourOpenApiHttpClientRegistrar
 {
     /// <summary>
-    /// Adds <see cref="SixtyfourOpenApiHttpClient"/> as a singleton service. <para/>
+    /// Adds the Sixtyfour HTTP client provider as a singleton service. <para/>
     /// </summary>
     public static IServiceCollection AddSixtyfourOpenApiHttpClientAsSingleton(this IServiceCollection services)
     {
@@ -22,7 +22,7 @@ public static class SixtyfourOpenApiHttpClientRegistrar
     }
 
     /// <summary>
-    /// Adds <see cref="SixtyfourOpenApiHttpClient"/> as a scoped service. <para/>
+    /// Adds the Sixtyfour HTTP client provider as a scoped service. Each scope owns a separate cached HTTP client. <para/>
     /// </summary>
     public static IServiceCollection AddSixtyfourOpenApiHttpClientAsScoped(this IServiceCollection services)
     {
