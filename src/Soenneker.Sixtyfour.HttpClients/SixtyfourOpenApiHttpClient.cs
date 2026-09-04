@@ -11,6 +11,7 @@ using Soenneker.Utils.HttpClientCache.Abstract;
 
 namespace Soenneker.Sixtyfour.HttpClients;
 
+/// <inheritdoc cref="ISixtyfourOpenApiHttpClient" />
 public sealed class SixtyfourOpenApiHttpClient : ISixtyfourOpenApiHttpClient
 {
     private readonly IHttpClientCache _httpClientCache;
