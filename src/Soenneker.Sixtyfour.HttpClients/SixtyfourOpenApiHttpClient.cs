@@ -30,7 +30,7 @@ public sealed class SixtyfourOpenApiHttpClient : ISixtyfourOpenApiHttpClient
     {
         return _httpClientCache.Get(_cacheKey, (config: _config, baseUrl: _config["Sixtyfour:ClientBaseUrl"] ?? _prodBaseUrl), static state =>
         {
-            var apiKey = state.config.GetValueStrict<string>("Sixtyfour:ApiKey");
+            var apiKey = state.config.GetStringStrict("Sixtyfour:ApiKey");
             string authHeaderName = state.config["Sixtyfour:AuthHeaderName"] ?? "Authorization";
             string authHeaderValueTemplate = state.config["Sixtyfour:AuthHeaderValueTemplate"] ?? "Bearer {token}";
             string authHeaderValue = authHeaderValueTemplate.Replace("{token}", apiKey, StringComparison.Ordinal);
